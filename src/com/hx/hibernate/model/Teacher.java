@@ -1,18 +1,20 @@
 package com.hx.hibernate.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
- * Created by hexing on 15-8-4.
+ * Created by hexing on 15-8-7.
  */
+enum Zhicheng{a,b,c}
+
 @Entity
 public class Teacher {
     private int id;
     private String name;
-    private String title;
+    private Zhicheng zhicheng;
 
     @Id
+    @GeneratedValue
     public int getId() {
         return id;
     }
@@ -29,11 +31,12 @@ public class Teacher {
         this.name = name;
     }
 
-    public String getTitle() {
-        return title;
+    @Enumerated(EnumType.STRING)
+    public Zhicheng getZhicheng() {
+        return zhicheng;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setZhicheng(Zhicheng zhicheng) {
+        this.zhicheng = zhicheng;
     }
 }

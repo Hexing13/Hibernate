@@ -4,15 +4,15 @@ package com.hx.hibernate.model;
  * Created by hexing on 15-8-3.
  */
 public class Student {
-    private int id;
+    private String id;
     private String name;
     private int age;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

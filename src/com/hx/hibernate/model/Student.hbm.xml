@@ -4,7 +4,9 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.hx.hibernate.model">
     <class name="Student">
-        <id name="id"></id>
+        <id name="id">
+            <generator class="uuid"></generator>
+        </id>
         <property name="name"></property>
         <property name="age"></property>
     </class>
