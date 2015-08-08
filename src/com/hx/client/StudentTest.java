@@ -13,7 +13,7 @@ import org.hibernate.cfg.Configuration;
 public class StudentTest {
     public static void main(String[] args) {
         Student student = new Student();
-        student.setId("a");
+        student.setId(2);
         student.setAge(22);
         student.setName("hexing2");
 

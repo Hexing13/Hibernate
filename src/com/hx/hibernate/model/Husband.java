@@ -1,13 +1,27 @@
 package com.hx.hibernate.model;
 
+import javax.persistence.*;
+
 /**
- * Created by hexing on 15-8-3.
+ * Created by hexing on 15-8-8.
  */
-public class Student {
+@Entity
+public class Husband {
     private int id;
     private String name;
-    private int age;
+    private Wife wife;
 
+    @OneToOne
+    public Wife getWife() {
+        return wife;
+    }
+
+    public void setWife(Wife wife) {
+        this.wife = wife;
+    }
+
+    @Id
+    @GeneratedValue
     public int getId() {
         return id;
     }
@@ -23,12 +37,6 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }
+
+

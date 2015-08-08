@@ -10,11 +10,11 @@
         <property name="connection.username">root</property>
         <property name="connection.password">hx106107</property>
         <!-- JDBC connection pool (use the built-in) -->
-        <!--<property name="connection.pool_size">1</property>-->
+        <property name="connection.pool_size">1</property>
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <!-- Enable Hibernate's automatic session context management -->
-        <!--<property name="current_session_context_class">thread</property>-->
+        <property name="current_session_context_class">thread</property>
         <!-- Disable the second-level cache -->
         <!--<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>-->
         <!-- Echo all executed SQL to stdout -->
@@ -23,7 +23,9 @@
 
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create</property>
-        <mapping resource="com/hx/hibernate/model/Student.hbm.xml"/>
-        <mapping class="com.hx.hibernate.model.Teacher" />
+        <!--<mapping resource="com/hx/hibernate/model/Student.hbm.xml"/>-->
+        <!--<mapping class="com.hx.hibernate.model.Teacher" />-->
+        <mapping class="com.hx.hibernate.model.Husband" />
+        <mapping class="com.hx.hibernate.model.Wife" />
     </session-factory>
 </hibernate-configuration>

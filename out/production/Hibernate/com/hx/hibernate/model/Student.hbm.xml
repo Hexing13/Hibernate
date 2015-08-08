@@ -5,9 +5,9 @@
 <hibernate-mapping package="com.hx.hibernate.model">
     <class name="Student">
         <id name="id">
-            <generator class="uuid"></generator>
+            <generator class="native"></generator>
         </id>
-        <property name="name"></property>
+        <property name="name" update="false"></property>
         <property name="age"></property>
     </class>
 </hibernate-mapping>
