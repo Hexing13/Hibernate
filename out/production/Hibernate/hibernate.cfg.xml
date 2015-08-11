@@ -25,7 +25,9 @@
         <property name="hbm2ddl.auto">create</property>
         <!--<mapping resource="com/hx/hibernate/model/Student.hbm.xml"/>-->
         <!--<mapping class="com.hx.hibernate.model.Teacher" />-->
-        <mapping class="com.hx.hibernate.model.Husband" />
-        <mapping class="com.hx.hibernate.model.Wife" />
+        <!--<mapping class="com.hx.hibernate.model.Husband" />-->
+        <!--<mapping class="com.hx.hibernate.model.Wife" />-->
+        <mapping class="com.hx.hibernate.model.Group" />
+        <mapping class="com.hx.hibernate.model.User" />
     </session-factory>
 </hibernate-configuration>

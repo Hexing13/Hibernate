@@ -1,15 +1,27 @@
 package com.hx.hibernate.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
- * Created by hexing on 15-8-8.
+ * Created by hexing on 15-8-11.
  */
 @Entity
-public class Husband {
+public class User {
     private int id;
     private String name;
-    private Wife wife;
+    private Group group;
+
+    @ManyToOne
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
 
 
     @Id
@@ -22,16 +34,6 @@ public class Husband {
         this.id = id;
     }
 
-    @Embedded
-    public Wife getWife() {
-        return wife;
-    }
-
-    public void setWife(Wife wife) {
-        this.wife = wife;
-    }
-
-
     public String getName() {
         return name;
     }
@@ -40,5 +42,3 @@ public class Husband {
         this.name = name;
     }
 }
-
-

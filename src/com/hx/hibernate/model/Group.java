@@ -1,16 +1,25 @@
 package com.hx.hibernate.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
- * Created by hexing on 15-8-8.
+ * Created by hexing on 15-8-11.
  */
-@Entity
-public class Husband {
+@Entity(name = "t_group")
+public class Group {
     private int id;
     private String name;
-    private Wife wife;
+    private Set<User> users = new HashSet<User>();
 
+    @OneToMany(mappedBy = "group")
+    public Set<User> getUsers() {
+        return users;
+    }
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
 
     @Id
     @GeneratedValue
@@ -22,16 +31,6 @@ public class Husband {
         this.id = id;
     }
 
-    @Embedded
-    public Wife getWife() {
-        return wife;
-    }
-
-    public void setWife(Wife wife) {
-        this.wife = wife;
-    }
-
-
     public String getName() {
         return name;
     }
@@ -40,5 +39,3 @@ public class Husband {
         this.name = name;
     }
 }
-
-
