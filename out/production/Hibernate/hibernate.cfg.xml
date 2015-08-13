@@ -22,12 +22,15 @@
         <property name="format_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
         <!--<mapping resource="com/hx/hibernate/model/Student.hbm.xml"/>-->
         <!--<mapping class="com.hx.hibernate.model.Teacher" />-->
         <!--<mapping class="com.hx.hibernate.model.Husband" />-->
         <!--<mapping class="com.hx.hibernate.model.Wife" />-->
-        <mapping class="com.hx.hibernate.model.Group" />
-        <mapping class="com.hx.hibernate.model.User" />
+        <!--<mapping class="com.hx.hibernate.model.G" />-->
+        <!--<mapping class="com.hx.hibernate.model.User" />-->
+        <mapping class="com.hx.hibernate.model.Bankuai" />
+        <mapping class="com.hx.hibernate.model.Topic" />
+        <mapping class="com.hx.hibernate.model.Msg" />
     </session-factory>
 </hibernate-configuration>

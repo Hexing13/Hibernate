@@ -5,10 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * Created by hexing on 15-8-3.
+ * Created by hexing on 15-8-13.
  */
 @Entity
-public class Student {
+public class Course {
     private int id;
     private String name;
 

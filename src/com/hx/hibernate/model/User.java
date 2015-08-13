@@ -1,9 +1,10 @@
 package com.hx.hibernate.model;
 
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.CascadeType;
+
+import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 /**
  * Created by hexing on 15-8-11.
@@ -12,17 +13,16 @@ import javax.persistence.ManyToOne;
 public class User {
     private int id;
     private String name;
-    private Group group;
+    private G group;
 
     @ManyToOne
-    public Group getGroup() {
+    @Cascade(CascadeType.ALL)
+    public G getGroup() {
         return group;
     }
-
-    public void setGroup(Group group) {
+    public void setGroup(G group) {
         this.group = group;
     }
-
 
     @Id
     @GeneratedValue

@@ -5,13 +5,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * Created by hexing on 15-8-3.
+ * Created by hexing on 15-8-13.
  */
 @Entity
-public class Student {
+public class Bankuai {
     private int id;
-    private String name;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
     @Id
     @GeneratedValue
     public int getId() {
@@ -22,11 +28,7 @@ public class Student {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
+    private String name;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+
 }

@@ -7,19 +7,10 @@ import java.util.Set;
 /**
  * Created by hexing on 15-8-11.
  */
-@Entity(name = "t_group")
-public class Group {
+@Entity(name = "G")
+public class G {
     private int id;
     private String name;
-    private Set<User> users = new HashSet<User>();
-
-    @OneToMany(mappedBy = "group")
-    public Set<User> getUsers() {
-        return users;
-    }
-    public void setUsers(Set<User> users) {
-        this.users = users;
-    }
 
     @Id
     @GeneratedValue
