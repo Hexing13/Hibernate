@@ -1,5 +1,7 @@
 package com.hx.hibernate.model;
 
+import org.hibernate.annotations.BatchSize;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;

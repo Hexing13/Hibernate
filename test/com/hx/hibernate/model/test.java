@@ -10,6 +10,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -29,25 +30,11 @@ public class test {
         for (int i = 1; i <= 10; i++){
             Bankuai b = new Bankuai();
             b.setName("b"+i);
-            session.save(b);
-        }
-
-        for (int i = 1; i <= 10; i++){
-            Bankuai b = new Bankuai();
-            b.setId(1);
-            Topic topic = new Topic();
-            topic.setBankuai(b);
-            topic.setTitle("topic" + i);
-            session.save(topic);
-        }
-
-        for (int i = 1; i <=10; i++){
             Topic t = new Topic();
-            t.setId(2);
-            Msg msg = new Msg();
-            msg.setTopic(t);
-            msg.setContent("msg" + i);
-            session.save(msg);
+            t.setBankuai(b);
+            t.setTitle("t"+i);
+            session.save(b);
+            session.save(t);
         }
         session.getTransaction().commit();
     }
@@ -56,20 +43,23 @@ public class test {
     public void Hql(){
         Session session = sf.getCurrentSession();
         session.beginTransaction();
-//        Query query = session.createQuery("from Bankuai b where b.id > :min and b.id < :max");
-//        query.setParameter("min",2);
-//        query.setParameter("max",7);
-//        query.setInteger("min",1);
-//        query.setInteger("max",8);
-        //链式编程
-//        Query query = session.createQuery("from Bankuai b where b.id > ? and b.id < ?")
-//                .setParameter(0,2)
-//                .setParameter(1,6);
-        Query query = session.createQuery("from Topic t where t.msgs is empty ");
-        List<Topic> topics = query.list();
-        for (Topic t:topics)
-            System.out.println(t.getId());
-
+        Query query = session.createQuery("from Bankuai ");
+        List<Bankuai> bankuais = query.list();
+        for (Bankuai b:bankuais)
+            System.out.println(b.getId()+"--"+b.getName());
+        session.getTransaction().commit();
+    }
+    @Test
+    public void Hql1(){
+        Session session = sf.getCurrentSession();
+        session.beginTransaction();
+        Query query = session.createQuery("from Bankuai");
+        Iterator<Bankuai> bankuaiIterator = query.iterate();
+        while (bankuaiIterator.hasNext()){
+            Bankuai b = bankuaiIterator.next();
+            System.out.println(b.getId()+"--"+b.getName());
+        }
+//
         session.getTransaction().commit();
     }
 
